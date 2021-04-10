@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main id="app">
+            <nav class="sidebar">
+                <h2 class="hidden">Media Selections</h2>
+
+                <ul class="videos">
+                    <h2>Videos</h2>
+                    <li v-for="video in videos">
+                        <a href="" @click.prevent="playVideo(video)">{{video.name}}</a>
+                    </li>
+                </ul>
+
+                <ul class="audio">
+                    <h2>Music</h2>
+                    <li v-for="song in music">
+                        <a @click.prevent="selectAudio(song)" href="">{{song.name}} - {{song.artist}}</a>
+                    </li>
+                </ul>
+            </nav>
+
+        <section class="player-con">
+            <h2 class="hidden">Video and Audio Player</h2>
+            <div v-if="isVideo" class="video-player">
+                <h3>{{current.name}}</h3>
+                <video :current="current" :src="'videos/'+current.source" controls>
+                    <track
+                    default
+                    kind="captions"
+                    :src="'videos/captions/'+ current.captions"
+                    />
+                </video>
+            </div>
+
+            <div :current="current" v-if="!isVideo" class="audio-player-con">
+                <h3>{{current.name}}</h3>
+                <div class="audio-player">
+                    <img :src="'images/'+current.image" alt="album cover">
+                    <div class="controls">
+                        <h4 class="hidden">audio controls</h4>
+                        <a @click.prevent="prevAudio" href="#">
+                            <img src="images/prev.svg" alt="previous button">
+                        </a>
+                        <a v-if="isPlaying" @click.prevent="pauseAudio" href="#">
+                            <img src="images/pause.svg" alt="play button">
+                        </a>
+                        <a v-else @click.prevent="playAudio" href="#">
+                            <img src="images/play.svg" alt="pause button">
+                        </a>
+                        <a @click.prevent="nextAudio" href="#">
+                            <img src="images/next.svg" alt="next button">
+                        </a>
+                    </div>
+                </div>
+
+                <a @click.prevent="showLyrics" href="" class="lyrics">Lyrics</a>
+                <p v-if="showlyrics">{{current.lyrics}}</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+</body>
+</html>

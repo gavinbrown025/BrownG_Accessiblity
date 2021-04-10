@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  font-size: 1.5rem;
+  background: #3c2e7a;
+  color: #dfeaf5;
+  font-family: "Nunito", "Helvetica Neue", sans-serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 2.5rem;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #dfeaf5;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.hidden {
+  display: none;
+}
+
+nav.sidebar {
+  background: #250b6b;
+  padding: 2rem 3rem;
+}
+
+nav.sidebar ul {
+  margin: 3rem 0;
+}
+
+nav.sidebar ul h2 {
+  margin-bottom: 1rem;
+}
+
+nav.sidebar ul li a {
+  display: block;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+nav.sidebar ul li a:hover, nav.sidebar ul li a:focus {
+  background: #3c2e7a;
+}
+
+nav.sidebar ul li a:focus {
+  outline: #dfeaf5;
+  -webkit-box-shadow: 0 0 5px rgba(223, 234, 245, 0.5);
+          box-shadow: 0 0 5px rgba(223, 234, 245, 0.5);
+}
+
+.player-con {
+  padding: 3rem 5rem;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-con h3 {
+  margin: 1rem 0;
+}
+
+.video-player video {
+  width: 100%;
+  height: auto;
+}
+
+.audio-player-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.audio-player {
+  position: relative;
+}
+
+.audio-player .controls {
+  position: absolute;
+  height: 4rem;
+  width: 100%;
+  background: #141516;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: relative;
+          flex-direction: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.audio-player .controls img {
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */
