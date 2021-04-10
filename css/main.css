@@ -123,6 +123,11 @@ nav.sidebar ul li a:focus {
           align-items: center;
 }
 
+.lyrics {
+  padding: 1rem 2rem;
+  text-decoration: underline;
+}
+
 .audio-player {
   position: relative;
 }
@@ -144,6 +149,10 @@ nav.sidebar ul li a:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.audio-player .controls a {
+  width: 4rem;
 }
 
 .audio-player .controls img {

@@ -100,6 +100,11 @@ nav.sidebar {
 	align-items: center;
 }
 
+.lyrics {
+	padding: 1rem 2rem;
+	text-decoration: underline;
+}
+
 .audio-player {
 	position: relative;
 	.controls {
@@ -112,6 +117,9 @@ nav.sidebar {
 		display: flex;
 		flex-direction: relative;
 		justify-content: center;
+		a {
+			width: 4rem;
+		}
 		img {
 			height: 100%;
 		}

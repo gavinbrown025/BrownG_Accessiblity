@@ -42,33 +42,47 @@
         },
         methods: {
             playVideo(video){
+                this.pauseAudio();
                 this.isVideo = true;
                 this.current = video;
             },
 
-            selectAudio(song){
+            selectAudio(song,index){
                 this.isVideo = false;
                 this.current = song;
+                this.index = index;
+
                 this.audioPlayer.src = `audio/${song.src}`;
                 this.audioPlayer.play();
+
                 this.isPlaying = true;
             },
             prevAudio(){
                 this.index--;
+                if (this.index < 0) {
+                    this.index = this.music.length - 1;
+                }
                 this.current = this.music[this.index];
                 this.playAudio(this.music[this.index]);
+                console.log(this.index);
             },
             nextAudio(){
                 this.index++;
+                if (this.index > this.music.length - 1) {
+                    this.index = 0;
+                }
+
                 this.current = this.music[this.index];
-                this.playAudio(this.music[this.index]);
+                this.playAudio(this.current);
             },
             pauseAudio(){
                 this.audioPlayer.pause();
                 this.isPlaying = false;
             },
-            playAudio(){
+            playAudio(song){
+                this.audioPlayer.src = `audio/${song.src}`;
                 this.audioPlayer.play();
+
                 this.isPlaying = true;
             },
             showLyrics(){
