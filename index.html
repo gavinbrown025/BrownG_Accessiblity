@@ -9,27 +9,27 @@
 </head>
 <body>
     <main id="app">
-            <nav class="sidebar">
-                <h2 class="hidden">Media Selections</h2>
+        <nav class="sidebar">
+            <h2 class="hidden">Media Selections</h2>
 
-                <ul class="videos">
-                    <h2>Videos</h2>
-                    <li v-for="video in videos">
-                        <a href="" @click.prevent="playVideo(video)">{{video.name}}</a>
-                    </li>
-                </ul>
+            <ul class="videos">
+                <h2>Videos</h2>
+                <li v-for="video in videos">
+                    <a href="" @click.prevent="playVideo(video)">{{video.name}}</a>
+                </li>
+            </ul>
 
-                <ul class="audio">
-                    <h2>Music</h2>
-                    <li v-for="song in music">
-                        <a @click.prevent="selectAudio(song)" href="">{{song.name}} - {{song.artist}}</a>
-                    </li>
-                </ul>
-            </nav>
+            <ul class="audio">
+                <h2>Music</h2>
+                <li v-for="song in music">
+                    <a @click.prevent="selectAudio(song)" href="">{{song.name}} - {{song.artist}}</a>
+                </li>
+            </ul>
+        </nav>
 
         <section class="player-con">
-            <h2 class="hidden">Video and Audio Player</h2>
             <div v-if="isVideo" class="video-player">
+                <h2 class="hidden">Video Player</h2>
                 <h3>{{current.name}}</h3>
                 <video :current="current" :src="'videos/'+current.source" controls>
                     <track
@@ -41,6 +41,7 @@
             </div>
 
             <div :current="current" v-if="!isVideo" class="audio-player-con">
+                <h2 class="hidden">Audio Player</h2>
                 <h3>{{current.name}}</h3>
                 <div class="audio-player">
                     <img :src="'images/'+current.image" alt="album cover">
