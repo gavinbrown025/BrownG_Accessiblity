@@ -1,5 +1,5 @@
 # Accessibilty Player
-Making sure everyone can access you site.
+Making sure everyone can experience you site.
 
 ## Features
 
